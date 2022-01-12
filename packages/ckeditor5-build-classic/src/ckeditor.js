@@ -28,9 +28,32 @@ import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices';
 
+
 // Added packages
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
+import ImageInsert from '@ckeditor/ckeditor5-image/src/imageinsert';
+import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
+import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
+import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript';
+import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript';
+import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
+import CodeBlock from '@ckeditor/ckeditor5-code-block/src/codeblock';
+import Font from '@ckeditor/ckeditor5-font/src/font';
+import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
+import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
+import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline';
+import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
+import LinkImage from '@ckeditor/ckeditor5-link/src/linkimage';
+import ListStyle from '@ckeditor/ckeditor5-list/src/liststyle';
+import SourceEditing from '@ckeditor/ckeditor5-source-editing/src/sourceediting';
+import SpecialCharacters from '@ckeditor/ckeditor5-special-characters/src/specialcharacters';
+import SpecialCharactersEssentials from '@ckeditor/ckeditor5-special-characters/src/specialcharactersessentials';
+import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties';
+import TableCellProperties from '@ckeditor/ckeditor5-table/src/tablecellproperties';
+import TableCaption from '@ckeditor/ckeditor5-table/src/tablecaption';
+import TodoList from '@ckeditor/ckeditor5-list/src/todolist';
+
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -40,7 +63,7 @@ ClassicEditor.builtinPlugins = [
 	Autoformat,
 	Bold,
 	Italic,
-	BlockQuote,	
+	BlockQuote,
 	CloudServices,
 	Heading,
 	Image,
@@ -57,35 +80,72 @@ ClassicEditor.builtinPlugins = [
 	Table,
 	TableToolbar,
 	TextTransformation,
-	
+
 	// Added
 	Alignment,
 	SimpleUploadAdapter,
+	ImageInsert,
+	Underline,
+	Strikethrough,
+    Subscript,
+    Superscript,
+    Code,
+    CodeBlock,
+    Font,
+    RemoveFormat,
+    Highlight,
+    HorizontalLine,
+    ImageResize,
+    LinkImage,
+    ListStyle,
+    SourceEditing,
+    SpecialCharacters,
+    SpecialCharactersEssentials,
+    TableProperties,
+    TableCellProperties,
+    TableCaption,
+    TodoList,
 ];
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
 	toolbar: {
 		items: [
-			'heading',
-			'|',
+			'heading', '|', 'undo', 'redo', '|', 'removeFormat', '|', 'sourceEditing',
+			    '-',
+			'fontFamily',
+			'fontSize',
+			'fontColor',
+			'fontBackgroundColor',
+			'|', 'highlight', '|',
 			'bold',
 			'italic',
-			'link',
+			'underline',
+			'strikethrough',
+			'subscript',
+			'superscript',
+			'code',
+			'codeBlock',
+			'blockQuote',
+			'horizontalLine',
+			    '-',
 			'bulletedList',
 			'numberedList',
+			'todoList',
 			'|',
 			'outdent',
 			'indent',
 			'|',
-			'uploadImage',
-			'blockQuote',
-			'insertTable',
-			'mediaEmbed',
-			'undo',
-			'redo',
 			'alignment',
-		]
+			    '-',
+			'insertImage',
+			'linkImage',
+			'mediaEmbed',
+			'link',
+			'insertTable',
+			'specialCharacters',
+		],
+		shouldNotGroupWhenFull: true
 	},
 	image: {
 		toolbar: [
@@ -99,9 +159,12 @@ ClassicEditor.defaultConfig = {
 	},
 	table: {
 		contentToolbar: [
+			'toggleTableCaption',
 			'tableColumn',
 			'tableRow',
-			'mergeTableCells'
+			'mergeTableCells',
+			'tableProperties',
+			'tableCellProperties',
 		]
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
