@@ -53,6 +53,8 @@ import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties';
 import TableCellProperties from '@ckeditor/ckeditor5-table/src/tablecellproperties';
 import TableCaption from '@ckeditor/ckeditor5-table/src/tablecaption';
 import TodoList from '@ckeditor/ckeditor5-list/src/todolist';
+import Mention from '@ckeditor/ckeditor5-mention/src/mention';
+
 
 
 export default class ClassicEditor extends ClassicEditorBase {}
@@ -105,6 +107,7 @@ ClassicEditor.builtinPlugins = [
     TableCellProperties,
     TableCaption,
     TodoList,
+    Mention,
 ];
 
 // Editor configuration.

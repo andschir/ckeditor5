@@ -43,6 +43,7 @@
     "@ckeditor/ckeditor5-link": "^32.0.0",
     "@ckeditor/ckeditor5-list": "^32.0.0",
     "@ckeditor/ckeditor5-media-embed": "^32.0.0",
+    "@ckeditor/ckeditor5-mention": "^32.0.0",
     "@ckeditor/ckeditor5-paragraph": "^32.0.0",
     "@ckeditor/ckeditor5-paste-from-office": "^32.0.0",
     "@ckeditor/ckeditor5-remove-format": "^32.0.0",
